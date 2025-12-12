@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	FILE *f = fopen("testdata.in", "r");
+	int z;
+	fscanf(f, "%d", &z);
+	
+	int total, min, max;
+	fscanf(f, "%d %d %d", &total, &min, &max);
+}
