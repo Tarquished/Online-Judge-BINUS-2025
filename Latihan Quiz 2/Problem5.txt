@@ -1,0 +1,71 @@
+PROBLEM: E-Sports Leaderboard
+
+Time Limit: 2.0 Seconds
+Memory Limit: 64 MB
+
+[DESKRIPSI]
+Sebuah turnamen game online "Battle of Binus" membutuhkan sistem leaderboard otomatis. Data setiap pemain terdiri dari:
+1. Username (String, unik, tanpa spasi).
+2. Score (Integer).
+3. Playtime (Integer - dalam jam).
+
+Panitia ingin menentukan Peringkat (Ranking) pemain dengan aturan prioritas sebagai berikut:
+1. Pemain dengan **Score TERTINGGI** berada di peringkat atas.
+2. Jika Score sama, pemain dengan **Playtime TERENDAH** (lebih jarang main tapi jago) berada di atas.
+3. Jika Score dan Playtime sama, urutkan berdasarkan **Username secara Alfabetis (A-Z)**.
+
+Tugasmu:
+1. Baca data dari file "leaderboard.in".
+2. Urutkan data sesuai aturan prioritas di atas.
+3. Lakukan pencarian menggunakan BINARY SEARCH berdasarkan 'Username' untuk mengetahui Peringkat (Ranking) pemain tersebut.
+
+[FORMAT INPUT]
+Input dibaca dari file "leaderboard.in".
+1. Baris pertama berisi integer N (Jumlah Player).
+2. N baris berikutnya berisi data format:
+   Username;Score;Playtime
+   (Pemisah adalah titik koma ';').
+3. Baris berikutnya berisi integer T (Jumlah Query).
+4. T baris berikutnya berisi Username yang ingin dicari peringkatnya.
+
+[FORMAT OUTPUT]
+Untuk setiap Query, cetak:
+Case #X: [RANK] - [Username] ([Score] pts)
+
+- Rank adalah posisi indeks setelah di-sort + 1 (dimulai dari 1).
+- Jika pemain tidak ditemukan, cetak: "Case #X: N/A"
+
+[CONSTRAINTS]
+- 1 <= N <= 1000
+- 1 <= T <= 100
+- Username maksimal 20 karakter.
+- Score antara 0 - 10000.
+- Playtime antara 0 - 1000.
+
+[SAMPLE INPUT]
+5
+ProPlayer99;2500;100
+NoobMaster;1200;500
+EzWin;2500;50
+AlphaOne;2500;50
+ZetaPlayer;1800;200
+3
+EzWin
+NoobMaster
+UnknownUser
+
+[SAMPLE OUTPUT]
+Case #1: 1 - EzWin (2500 pts)
+Case #2: 5 - NoobMaster (1200 pts)
+Case #3: N/A
+
+[PENJELASAN SAMPLE]
+Mari kita urutkan manual:
+1. EzWin (Score 2500, Time 50) -> Menang Time lawan ProPlayer99, Menang Abjad lawan AlphaOne.
+2. AlphaOne (Score 2500, Time 50) -> Kalah Abjad dari EzWin.
+3. ProPlayer99 (Score 2500, Time 100) -> Kalah Time.
+4. ZetaPlayer (Score 1800).
+5. NoobMaster (Score 1200).
+
+Query 1: EzWin -> Rank 1.
+Query 2: NoobMaster -> Rank 5.

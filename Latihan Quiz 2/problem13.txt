@@ -1,0 +1,58 @@
+PROBLEM: The Lottery Counter
+
+Time Limit: 1.0 Second
+Memory Limit: 64 MB
+
+[DESKRIPSI]
+Panitia lotre memiliki database jutaan nomor tiket yang sudah diurutkan (Sorted).
+Karena sistem error, banyak tiket dengan nomor yang sama tercetak ganda (Duplikat).
+
+Tugasmu adalah menjawab pertanyaan manajer: "Ada berapa lembar tiket untuk nomor X?"
+
+SANGAT DILARANG menggunakan Linear Search (Looping biasa) untuk menghitung jumlahnya, karena data sangat banyak (N = 100.000). Kamu harus menggunakan BINARY SEARCH.
+
+Tugas:
+1. Baca N nomor tiket (Array Integer, sudah sorted).
+2. Untuk setiap Query nomor X:
+   - Cari Index KEMUNCULAN PERTAMA (First Occurrence / Lower Bound).
+   - Cari Index KEMUNCULAN TERAKHIR (Last Occurrence / Upper Bound).
+   - Hitung Total = (IndexAkhir - IndexAwal) + 1.
+
+[FORMAT INPUT]
+1. Baris pertama N (Jumlah Tiket).
+2. N baris berikutnya berisi angka tiket (Sorted Ascending).
+3. Baris berikutnya Q (Jumlah Pertanyaan).
+4. Q baris berikutnya angka yang dicari.
+
+[FORMAT OUTPUT]
+Format: "Angka [X] ada [Jumlah] buah."
+Jika tidak ditemukan, cetak "Angka [X] tidak ditemukan."
+
+[SAMPLE INPUT]
+10
+10
+20
+20
+20
+30
+40
+40
+50
+60
+60
+3
+20
+40
+99
+
+[SAMPLE OUTPUT]
+Angka 20 ada 3 buah.
+Angka 40 ada 2 buah.
+Angka 99 tidak ditemukan.
+
+[LOGIKA UPPER BOUND (MENCARI TERAKHIR)]
+Mirip dengan Lower Bound tadi, TAPI:
+- Jika d[mid] == target:
+  Simpan ans = mid.
+  Geser ke KANAN (kiri = mid + 1) -> Karena kita mau cari yang lebih kanan lagi.
+- Sisanya sama.

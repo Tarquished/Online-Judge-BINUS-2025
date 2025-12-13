@@ -1,0 +1,65 @@
+PROBLEM: The Data Cleaner (CSV Generator)
+
+Time Limit: 1.0 Second
+Memory Limit: 64 MB
+
+[DESKRIPSI]
+Sebuah perusahaan memiliki database karyawan lama yang formatnya berantakan ("messy.in").
+Manajer IT memintamu untuk merapikan data tersebut dan menyimpannya ke dalam format CSV (Comma Separated Values) agar bisa dibuka di Excel.
+
+Tugasmu:
+1. Baca data dari file "messy.in".
+2. Lakukan perbaikan data:
+   - NAMA: Ubah menjadi format "Title Case" (Huruf pertama Besar, sisanya Kecil).
+     Contoh: "bUDi" -> "Budi", "aNDI" -> "Andi".
+   - TAHUN LAHIR: Ubah menjadi UMUR (Asumsikan tahun saat ini 2025).
+3. TULISKAN hasilnya ke file baru bernama "clean_data.csv".
+
+[FORMAT INPUT] (messy.in)
+1. Baris pertama N (Jumlah Data).
+2. N baris berikutnya berisi:
+   Nama#TahunLahir#Kota
+   (Pemisah pagar '#', nama mungkin huruf besar/kecil acak).
+
+[FORMAT OUTPUT] (clean_data.csv)
+Tuliskan ke file dengan format CSV (pemisah koma ','):
+Nama,Umur,Kota
+
+[CONSTRAINTS]
+- 1 <= N <= 100
+- Nama hanya 1 kata.
+- Tahun Lahir valid (<= 2025).
+
+[SAMPLE INPUT] (messy.in)
+10
+rINA#1995#Medan
+DANI#1998#Semarang
+eko#2005#Jogja
+Cecep#1980#Bogor
+FANI#2025#Depok
+gIlAnG#1970#Malang
+ZARA#2010#Bali
+xavier#1965#Pontianak
+yUnI#2000#Makassar
+bAMBANG#1955#Solo
+
+[SAMPLE OUTPUT] (Isi file clean_data.csv)
+Nama,Umur,Kota
+Rina,30,Medan
+Dani,27,Semarang
+Eko,20,Jogja
+Cecep,45,Bogor
+Fani,0,Depok
+Gilang,55,Malang
+Zara,15,Bali
+Xavier,60,Pontianak
+Yuni,25,Makassar
+Bambang,70,Solo
+
+[HINT LOGIKA]
+1. Parsing pakai strtok seperti biasa.
+2. Logic Title Case:
+   - Huruf pertama (index 0) paksa jadi toupper().
+   - Huruf sisa (index 1 keatas) paksa jadi tolower().
+   - Butuh library <ctype.h>.
+3. Output pakai fprintf(fout, "%s,%d,%s\n", ...).

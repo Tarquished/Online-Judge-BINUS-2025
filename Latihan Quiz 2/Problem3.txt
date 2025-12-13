@@ -1,0 +1,64 @@
+PROBLEM: The 3n+1 Mystery
+
+Time Limit: 1.0 Second
+Memory Limit: 64 MB
+
+[DESKRIPSI]
+Profesor Math sedang meneliti sebuah fenomena matematika misterius yang disebut "Collatz Conjecture" (atau masalah 3n+1). Ia percaya bahwa setiap bilangan bulat positif, jika diproses dengan aturan tertentu, pada akhirnya akan selalu mencapai angka 1.
+
+Aturan perubahan angkanya adalah sebagai berikut:
+1. Jika angka saat ini (n) adalah GENAP, maka angka berikutnya adalah n / 2.
+2. Jika angka saat ini (n) adalah GANJIL, maka angka berikutnya adalah 3 * n + 1.
+3. Proses berhenti jika angka sudah mencapai 1.
+
+Tugasmu adalah menghitung BERAPA LANGKAH yang dibutuhkan untuk mengubah sebuah angka N menjadi 1 menggunakan aturan di atas.
+
+Kamu WAJIB menggunakan fungsi REKURSIF untuk menghitung langkah-langkah ini.
+Prototype fungsi yang disarankan:
+int countSteps(int n);
+
+[FORMAT INPUT]
+Input dibaca dari file atau standard input.
+1. Baris pertama berisi integer T, jumlah kasus uji.
+2. T baris berikutnya masing-masing berisi satu integer N, yaitu angka awal.
+
+[FORMAT OUTPUT]
+Untuk setiap kasus uji, cetak format:
+Case #X: [JUMLAH_LANGKAH]
+
+Dimana X adalah nomor urut kasus uji.
+
+[CONSTRAINTS / BATASAN]
+- 1 <= T <= 100
+- 1 <= N <= 10000
+- Dijamin N akan mencapai 1 dalam batas integer standar.
+
+[SAMPLE INPUT]
+3
+1
+6
+11
+
+[SAMPLE OUTPUT]
+Case #1: 0
+Case #2: 8
+Case #3: 14
+
+[PENJELASAN SAMPLE]
+Sample 1 (Input 1):
+Angka sudah 1. Langkah = 0.
+
+Sample 2 (Input 6):
+Langkah 1: 6 adalah Genap -> 6/2 = 3
+Langkah 2: 3 adalah Ganjil -> 3*3 + 1 = 10
+Langkah 3: 10 adalah Genap -> 10/2 = 5
+Langkah 4: 5 adalah Ganjil -> 3*5 + 1 = 16
+Langkah 5: 16 adalah Genap -> 16/2 = 8
+Langkah 6: 8 adalah Genap -> 8/2 = 4
+Langkah 7: 4 adalah Genap -> 4/2 = 2
+Langkah 8: 2 adalah Genap -> 2/2 = 1 (BERHENTI)
+Total = 8 langkah.
+
+Sample 3 (Input 11):
+11 -> 34 -> 17 -> 52 -> 26 -> 13 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
+Total = 14 langkah.

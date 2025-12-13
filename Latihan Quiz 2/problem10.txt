@@ -1,0 +1,68 @@
+PROBLEM: The Royal Library
+
+Time Limit: 1.0 Second
+Memory Limit: 64 MB
+
+[DESKRIPSI]
+Perpustakaan Kerajaan baru saja mengalami renovasi. Ribuan buku kuno berserakan dan Raja memintamu untuk menyusunnya kembali ke rak dengan aturan yang sangat ketat.
+
+Setiap buku memiliki data:
+1. Judul Buku (String).
+2. Penulis (String).
+3. Tahun Terbit (Integer).
+4. ISBN (String - Kode Unik).
+
+Tugasmu adalah MENGURUTKAN buku-buku tersebut berdasarkan prioritas berikut:
+1. Prioritas Utama: Nama PENULIS secara ASCENDING (A-Z).
+2. Prioritas Kedua: Jika Penulis sama, urutkan berdasarkan TAHUN TERBIT secara DESCENDING (Terbaru ke Terlama).
+3. Prioritas Ketiga: Jika Penulis dan Tahun sama, urutkan berdasarkan JUDUL BUKU secara ASCENDING (A-Z).
+
+[FORMAT INPUT]
+Input dibaca dari file "library.in".
+1. Baris pertama berisi integer N (Jumlah Buku).
+2. N baris berikutnya berisi data buku dengan format:
+   ISBN;Judul;Penulis;Tahun
+   (Pemisah adalah tanda titik koma ';').
+
+[FORMAT OUTPUT]
+Cetak daftar buku yang sudah terurut ke layar (terminal) dengan format:
+[Penulis] - [Judul] ([Tahun])
+
+[CONSTRAINTS]
+- 1 <= N <= 1000
+- Panjang string maksimal 50 karakter.
+- Tahun antara 1000 - 2025.
+
+[SAMPLE INPUT]
+12
+ISBN01;Murder on the Orient Express;Agatha Christie;1934
+ISBN02;And Then There Were None;Agatha Christie;1939
+ISBN03;The Mysterious Affair at Styles;Agatha Christie;1920
+ISBN04;Foundation;Isaac Asimov;1951
+ISBN05;I, Robot;Isaac Asimov;1950
+ISBN06;The Stars Like Dust;Isaac Asimov;1951
+ISBN07;Harry Potter Stone;J.K. Rowling;1997
+ISBN08;Harry Potter Chamber;J.K. Rowling;1998
+ISBN09;A Study in Scarlet;Arthur Conan Doyle;1887
+ISBN10;The Sign of Four;Arthur Conan Doyle;1890
+ISBN11;It;Stephen King;1986
+ISBN12;Misery;Stephen King;1987
+
+[SAMPLE OUTPUT]
+Agatha Christie - And Then There Were None (1939)
+Agatha Christie - Murder on the Orient Express (1934)
+Agatha Christie - The Mysterious Affair at Styles (1920)
+Arthur Conan Doyle - The Sign of Four (1890)
+Arthur Conan Doyle - A Study in Scarlet (1887)
+Isaac Asimov - Foundation (1951)
+Isaac Asimov - The Stars Like Dust (1951)
+Isaac Asimov - I, Robot (1950)
+J.K. Rowling - Harry Potter Chamber (1998)
+J.K. Rowling - Harry Potter Stone (1997)
+Stephen King - Misery (1987)
+Stephen King - It (1986)
+
+[PENJELASAN]
+1. Semua buku "J.K. Rowling" kumpul di atas (karena 'R' < 'T' dari Tolkien).
+2. Di antara buku J.K. Rowling, diurutkan tahunnya dari yang paling besar (2012 -> 2001 -> 1997).
+3. Buku Tolkien juga diurutkan tahunnya Descending (1954 -> 1937).

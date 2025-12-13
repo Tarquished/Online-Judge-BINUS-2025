@@ -1,0 +1,52 @@
+PROBLEM: Monster Encyclopedia
+
+Time Limit: 1.0 Second
+Memory Limit: 64 MB
+
+[DESKRIPSI]
+Kamu adalah seorang pengembang game RPG. Kamu memiliki database berisi daftar monster dan tingkat kekuatannya (Power). Namun, data tersebut saat ini tersimpan secara acak.
+
+Tugasmu adalah membuat program untuk membaca data monster dari file dan mengurutkannya agar mudah dilihat oleh pemain.
+
+Aturan Pengurutan (Sorting Criteria):
+1. Prioritas Utama: Urutkan berdasarkan POWER dari TERBESAR ke TERKECIL (Descending).
+2. Prioritas Kedua: Jika Power sama, urutkan berdasarkan NAMA MONSTER secara ALFABETIS A-Z (Ascending).
+
+[FORMAT INPUT]
+Input dibaca dari file "testdata6.in".
+1. Baris pertama berisi integer N (Jumlah Monster).
+2. N baris berikutnya berisi data monster dengan format:
+   NamaMonster#Power
+   (Pemisah antara nama dan power adalah tanda pagar '#').
+
+[FORMAT OUTPUT]
+Cetak daftar monster yang sudah terurut ke layar (terminal) dengan format:
+[NamaMonster] - Power: [Power]
+
+[CONSTRAINTS / BATASAN]
+- 1 <= N <= 100
+- 1 <= Power <= 1.000.000
+- Panjang NamaMonster maksimal 100 karakter.
+- NamaMonster dijamin TIDAK mengandung spasi (satu kata).
+
+[SAMPLE INPUT]
+5
+Goblin#50
+Dragon#5000
+Slime#10
+Wolf#50
+Orc#120
+
+[SAMPLE OUTPUT]
+Dragon - Power: 5000
+Orc - Power: 120
+Goblin - Power: 50
+Wolf - Power: 50
+Slime - Power: 10
+
+[PENJELASAN SAMPLE]
+1. Dragon (5000) paling kuat -> Posisi 1.
+2. Orc (120) -> Posisi 2.
+3. Goblin dan Wolf sama-sama Power 50.
+   - Karena 'G' (Goblin) lebih awal abjadnya daripada 'W' (Wolf), maka Goblin dicetak duluan.
+4. Slime (10) paling lemah -> Posisi terakhir.

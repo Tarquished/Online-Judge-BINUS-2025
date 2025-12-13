@@ -1,0 +1,46 @@
+PROBLEM: The Mirror Curse
+
+Time Limit: 1.0 Second
+Memory Limit: 64 MB
+
+[DESKRIPSI]
+Seorang penyihir kuno memberikan kutukan pada sebuah cermin ajaib. Cermin tersebut hanya akan memantulkan bayangan jika benda atau kata yang diperlihatkan memiliki sifat "Palindrome". 
+
+Sebuah kata dikatakan Palindrome jika kata tersebut dibaca dari depan maupun dari belakang menghasilkan bunyi dan urutan huruf yang sama persis (contoh: "katak", "malam", "ada").
+
+Tugasmu adalah membantu penyihir tersebut memisahkan mana kata yang merupakan Palindrome dan mana yang bukan. Karena cermin ini bersifat magis, kamu diminta menggunakan konsep REKURSI (Recursion) untuk mengecek setiap kata.
+
+[FORMAT INPUT]
+Input dibaca dari file "testdata2.in" (sesuai kode Anda) atau standard input.
+1. Baris pertama berisi satu integer T, yang menyatakan jumlah kasus uji (test cases).
+2. T baris berikutnya masing-masing berisi satu buah string S yang terdiri dari huruf alfabet.
+
+[FORMAT OUTPUT]
+Untuk setiap kasus uji, cetak output dengan format:
+Case #X: [RESULT]
+
+Dimana X adalah nomor urut kasus uji (dimulai dari 1).
+- Jika kata tersebut adalah Palindrome, ganti [RESULT] dengan: YES
+- Jika kata tersebut BUKAN Palindrome, ganti [RESULT] dengan: NO
+
+[CONSTRAINTS / BATASAN]
+- 1 <= T <= 100
+- 1 <= Panjang String S <= 100
+- String S tidak mengandung spasi.
+- String S hanya berisi huruf kecil atau huruf besar (Case Sensitive, 'A' tidak sama dengan 'a', kecuali logika program Anda mengabaikannya. Berdasarkan kode Anda: 'A' != 'a').
+
+[SAMPLE INPUT]
+3
+katak
+budi
+malam
+
+[SAMPLE OUTPUT]
+Case #1: YES
+Case #2: NO
+Case #3: YES
+
+[PENJELASAN SAMPLE]
+1. "katak" dibalik tetap "katak" -> YES
+2. "budi" dibalik menjadi "idub" (Tidak sama) -> NO
+3. "malam" dibalik tetap "malam" -> YES

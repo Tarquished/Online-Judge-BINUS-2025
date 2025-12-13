@@ -1,0 +1,45 @@
+PROBLEM: The Sum of Digits
+
+Time Limit: 1.0 Second
+Memory Limit: 64 MB
+
+[DESKRIPSI]
+Diberikan sebuah angka integer positif yang besar. Tugasmu adalah menghitung
+jumlah dari setiap digit angka tersebut menggunakan REKURSI.
+
+Contoh: Jika angkanya 1234.
+Maka perhitungannya: 1 + 2 + 3 + 4 = 10.
+
+Kamu DILARANG menggunakan loop (for/while) untuk memecah digit.
+Gunakan operator modulus (%) dan pembagian (/) dalam rekursi.
+
+Prototype fungsi:
+int sumDigits(int n);
+
+[FORMAT INPUT]
+Input dibaca dari standard input.
+1. Baris pertama berisi integer T, jumlah kasus uji.
+2. T baris berikutnya masing-masing berisi satu integer N.
+
+[FORMAT OUTPUT]
+Case #X: [HASIL_PENJUMLAHAN]
+
+[CONSTRAINTS]
+- 1 <= T <= 100
+- 1 <= N <= 1.000.000.000 (Pastikan pakai int atau long long jika perlu)
+
+[SAMPLE INPUT]
+3
+1234
+99
+5
+
+[SAMPLE OUTPUT]
+Case #1: 10
+Case #2: 18
+Case #3: 5
+
+[HINT / PETUNJUK]
+- Ambil digit terakhir dengan n % 10.
+- Buang digit terakhir dengan n / 10.
+- Base case: Jika angka sudah 0 atau tinggal 1 digit.

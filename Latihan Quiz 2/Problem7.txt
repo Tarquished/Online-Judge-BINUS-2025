@@ -1,0 +1,49 @@
+PROBLEM: Salary Slip Generator
+
+Time Limit: 1.0 Second
+Memory Limit: 64 MB
+
+[DESKRIPSI]
+Departemen Keuangan perusahaan meminta bantuanmu untuk membuat slip gaji otomatis.
+Data karyawan tersimpan di file "employee.in".
+Setiap baris berisi: NamaKaryawan, GajiPokok, dan Bonus.
+
+Tugasmu adalah:
+1. Membaca data dari "employee.in".
+2. Menghitung Gaji Bersih (Net Salary) dengan rumus:
+   Gaji Bersih = Gaji Pokok + Bonus - Pajak (5% dari Gaji Pokok).
+
+[FORMAT INPUT]
+Input dibaca dari file "employee.in".
+1. Baris pertama berisi integer N (Jumlah Karyawan).
+2. N baris berikutnya berisi format:
+   Nama#GajiPokok#Bonus
+
+[FORMAT OUTPUT]
+Output DITULIS ke file "slip.out".
+Format setiap baris:
+[Nama] - Net: Rp[GajiBersih]
+
+- GajiBersih ditampilkan sebagai integer (tanpa koma/desimal).
+- Pajak 5% dihitung dari Gaji Pokok saja (GajiPokok * 0.05).
+
+[CONSTRAINTS]
+- 1 <= N <= 100
+- Nama tidak mengandung spasi.
+- GajiPokok dan Bonus adalah integer positif.
+
+[SAMPLE INPUT] (employee.in)
+3
+Budi#5000000#1000000
+Siti#8000000#500000
+Andi#4000000#0
+
+[SAMPLE OUTPUT] 
+Budi - Net: Rp5750000
+Siti - Net: Rp8100000
+Andi - Net: Rp3800000
+
+[PENJELASAN]
+1. Budi: 
+   Pajak = 5% x 5jt = 250.000
+   Total = 5jt + 1jt - 250rb = 5.750.000

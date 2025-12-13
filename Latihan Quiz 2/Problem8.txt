@@ -1,0 +1,61 @@
+PROBLEM: The First Winner (Lower Bound Search)
+
+Time Limit: 1.0 Second
+Memory Limit: 64 MB
+
+[DESKRIPSI]
+Sebuah lomba lari maraton diikuti oleh ribuan orang. Karena sistem pendaftaran yang error, banyak peserta memiliki nama yang SAMA PERSIS.
+Panitia mencatat urutan kedatangan peserta di garis finish.
+
+Tugasmu adalah mencari RANKING (Urutan kedatangan) dari peserta bernama X.
+KARENA ada banyak orang bernama X, yang dihitung sebagai ranking valid adalah orang bernama X yang sampai **PALING PERTAMA** (Paling kiri di array/urutan teratas).
+
+Tugas:
+1. Baca data peserta (Input sudah terurut berdasarkan urutan kedatangan/Ranking 1 sampai N).
+2. Lakukan BINARY SEARCH untuk menemukan posisi peserta X yang **PALING AWAL**.
+
+[FORMAT INPUT]
+1. Baris pertama N (Jumlah Peserta).
+2. N baris berikutnya adalah Nama Peserta (sudah urut ranking 1 - N).
+   (Note: Input SUDAH terurut secara ranking, tapi Namanya mungkin acak/tidak urut abjad. 
+   TAPI, untuk soal ini, asumsikan kita mencari di array yang sudah disortir Namanya agar Binary Search valid, 
+   ATAU anggap inputnya khusus: Nama juga sudah terkelompok/terurut).
+   
+   *REVISI CONSTRAINT AGAR VALID BINARY SEARCH:*
+   Input N baris berisi Nama yang SUDAH TERURUT secara Abjad (Ascending).
+   
+3. Baris berikutnya T (Jumlah Query).
+4. T baris berikutnya Nama yang dicari.
+
+[FORMAT OUTPUT]
+Case #X: First occurrence at index [Index+1]
+
+- Jika tidak ditemukan, cetak "Not Found".
+
+[SAMPLE INPUT]
+10
+Andi
+Andi
+Andi
+Budi
+Budi
+Caca
+Caca
+Caca
+Caca
+Dedi
+3
+Budi
+Caca
+Zara
+
+[SAMPLE OUTPUT]
+Case #1: First occurrence at index 4
+Case #2: First occurrence at index 6
+Case #3: Not Found
+
+[PENJELASAN LOGIC]
+Lihat "Budi". Budi ada di index 3 dan 4 (0-based).
+Binary Search biasa mungkin akan menemukan Budi di index 3 atau 4 tergantung pembulatan.
+Tapi soal MINTA index 3 (Ranking 4).
+Jadi kalau ketemu Budi di tengah, JANGAN STOP. Coba cari lagi ke KIRI, siapa tau masih ada Budi lain di sana.

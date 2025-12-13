@@ -1,0 +1,83 @@
+PROBLEM: Student Report Card
+
+Time Limit: 1.0 Second
+Memory Limit: 64 MB
+
+[DESKRIPSI]
+Sebuah sekolah ingin mencatat nilai ujian siswanya. Setiap siswa memiliki data diri dan daftar nilai untuk 3 mata pelajaran.
+
+Struktur datanya harus seperti ini:
+1. Struct `Score`: Menyimpan nilai (int) dan nama pelajaran (string).
+2. Struct `Student`: Menyimpan ID (string), Nama (string), dan ARRAY dari `Score` (ukuran 3).
+
+Tugasmu:
+1. Baca data N siswa.
+2. Untuk setiap siswa, hitung RATA-RATA nilainya.
+3. Tampilkan data siswa yang RATA-RATA nilainya >= 70 (Lulus).
+4. Format output harus rapi.
+
+[FORMAT INPUT]
+1. Baris pertama N (Jumlah Siswa).
+2. N blok data berikutnya. Setiap blok berisi:
+   - Baris 1: ID Siswa
+   - Baris 2: Nama Siswa
+   - Baris 3: Nilai Math
+   - Baris 4: Nilai Science
+   - Baris 5: Nilai English
+
+[FORMAT OUTPUT]
+Tampilkan siswa yang Lulus (Rata-rata >= 70) dengan format:
+[ID] [Nama]
+- Math: [Nilai]
+- Science: [Nilai]
+- English: [Nilai]
+Average: [RataRata 2 angka desimal]
+-------------------
+
+[SAMPLE INPUT]
+3
+S001
+Budi Santoso
+80
+85
+90
+S002
+Siti Aminah
+60
+50
+55
+S003
+Andi Wijaya
+70
+75
+65
+
+[SAMPLE OUTPUT]
+S001 Budi Santoso
+- Math: 80
+- Science: 85
+- English: 90
+Average: 85.00
+-------------------
+S003 Andi Wijaya
+- Math: 70
+- Science: 75
+- English: 65
+Average: 70.00
+-------------------
+
+[CLUE STRUKTUR]
+typedef struct {
+    char subject[20];
+    int value;
+} Score;
+
+typedef struct {
+    char id[10];
+    char name[50];
+    Score scores[3]; // Struct di dalam struct!
+} Student;
+
+[TANTANGAN]
+Bagaimana cara mengisi `scores[0].subject` dengan "Math" secara manual di dalam kode?
+Bagaimana cara mengakses `scores[1].value` saat perhitungan rata-rata?
